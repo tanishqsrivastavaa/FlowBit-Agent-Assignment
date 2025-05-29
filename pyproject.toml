@@ -1,0 +1,11 @@
+[project]
+name = "flowbit-agent-assignment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.12",
+    "pydantic-ai>=0.2.11",
+    "streamlit>=1.45.1",
+]
