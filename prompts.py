@@ -1,3 +1,14 @@
+from pydantic import BaseModel
+
+
+class Classification(BaseModel):
+    format:str
+    intent:str
+    route_to:str
+    log:str
+
+
+
 system_prompt_classifier = (
     "You are a helpful assistant that receives raw files, emails, or JSON inputs.\n"
     "Your tasks are:\n"
@@ -8,7 +19,7 @@ system_prompt_classifier = (
     "Always respond with a JSON object containing:\n"
     '  "format": the detected format (PDF, JSON, or Email)\n'
     '  "intent": the detected intent (Invoice, RFQ, Complaint, Regulation, etc.)\n'
-    '  "route_to": the name of the agent to handle this intent\n'
+    '  "route_to": the name of the agent to handle this intent. Use one of: "json_agent", "email_agent".\n'
     '  "log": a summary of the format and intent for logging purposes\n'
     "If you are unsure, make your best guess based on the content."
 )
